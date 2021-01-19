@@ -7,14 +7,11 @@
     tools:context=".MainActivity">
 
 
-
     <EditText
-        android:id="@+id/result"
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:autofillHints=" "
-        android:inputType="none"
         android:textAlignment="textEnd"
         android:textColor="#673AB7"
         android:textSize="56sp"
@@ -22,21 +19,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAC"
         android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
-
         android:backgroundTint="#673AB7"
         android:text="@string/clear"
+        android:onClick="acEvent"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/result" />
+        app:layout_constraintTop_toBottomOf="@id/editText" />
 
     <Button
         android:id="@+id/btnDel"
@@ -44,7 +41,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
         android:text="@string/backspace"
-
+        android:onClick="backspace"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -56,8 +53,8 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
-
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_7"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -69,8 +66,8 @@
         android:id="@+id/btn8"
         android:layout_width="100dp"
         android:layout_height="80dp"
-
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_8"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -82,8 +79,8 @@
         android:id="@+id/btn9"
         android:layout_width="100dp"
         android:layout_height="80dp"
-
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_9"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -96,8 +93,8 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="opEvent"
         android:text="@string/division"
-
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -108,9 +105,9 @@
         android:id="@+id/btn4"
         android:layout_width="100dp"
         android:layout_height="80dp"
-
         android:layout_marginStart="5dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_4"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -123,8 +120,8 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_5"
-
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -136,8 +133,8 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_6"
-
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -149,8 +146,8 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="opEvent"
         android:text="@string/multiplication"
-
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -163,8 +160,8 @@
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_1"
-
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -176,10 +173,10 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_2"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/btn1"
         app:layout_constraintTop_toTopOf="@id/btn1" />
@@ -189,10 +186,10 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_3"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/btn2"
         app:layout_constraintTop_toTopOf="@id/btn2" />
@@ -202,8 +199,8 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="opEvent"
         android:text="@string/substraction"
-
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -216,11 +213,11 @@
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/dot"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
-
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn1" />
 
@@ -229,11 +226,11 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="numberEvent"
         android:text="@string/_0"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
-
         app:layout_constraintLeft_toRightOf="@id/btnDot"
         app:layout_constraintTop_toTopOf="@id/btnDot" />
 
@@ -242,11 +239,11 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="equalEvent"
         android:text="@string/equal"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
-
         app:layout_constraintLeft_toRightOf="@id/btn0"
         app:layout_constraintTop_toTopOf="@id/btn0" />
 
@@ -255,10 +252,10 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:backgroundTint="#673AB7"
+        android:onClick="opEvent"
         android:text="@string/addition"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/btnEqual"
         app:layout_constraintTop_toTopOf="@id/btnEqual" />
