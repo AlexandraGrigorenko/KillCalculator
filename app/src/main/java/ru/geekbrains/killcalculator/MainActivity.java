@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnAC, btnDel, btnAddition, btnDivision, btnSubtraction, btnMultiplication, btnEqual, btnDot;
     EditText result;
+    int firstValue, secValue,res;
+    char op;
 
 
     @Override
@@ -18,6 +20,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initButton();
+
+        btnDel.setSoundEffectsEnabled(false);
+        btn1.setSoundEffectsEnabled(false);
+
         btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -89,9 +95,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.btnDel) {
             if (!result.getText().toString().equals("")){
                 String value= result.getText().toString();
-                if(value.length()>0)(
+                if(value.length()>0){
                         value=value.substring(0,value.length()-1);
                         result.setText(value);
+            }
+            }
+        }else if (view.getId()==R.id.btnAC){
+            result.setText("");
+        }else if(view.getId()==R.id.btnAddition){
+            firstValue= Integer.parseInt(result.getText().toString());
+            op='+';
+            result.setText("");
+        }else if(view.getId()==R.id.btnSubtraction){
+            firstValue= Integer.parseInt(result.getText().toString());
+            op='-';
+            result.setText("");
+        }else if(view.getId()==R.id.btnMultiplication){
+            firstValue= Integer.parseInt(result.getText().toString());
+            op='*';
+            result.setText("");
+        }else if(view.getId()==R.id.btnDivision){
+            firstValue= Integer.parseInt(result.getText().toString());
+            op='/';
+            result.setText("");
+        }else if(view.getId()==R.id.btnEqual){
+            secValue=Integer.parseInt(result.getText().toString());
+            switch (op){
+                case '+':
+                res=firstValue+secValue;
+                result.setText(res+"");
+                break;
+                case '-':
+                res=firstValue-secValue;
+                result.setText(res+"");
+                break;
+                case '*':
+                res=firstValue*secValue;
+                result.setText(res+"");
+                break;
+                case '/':
+                res=firstValue/secValue;
+                result.setText(res+"");
+                break;
             }
         }
     }
