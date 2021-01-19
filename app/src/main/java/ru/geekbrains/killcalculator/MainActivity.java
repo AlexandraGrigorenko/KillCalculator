@@ -86,6 +86,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             result.setText(result.getText() + "9");
         } else if (view.getId() == R.id.btnDot) {
             result.setText(result.getText() + ".");
+        } else if (view.getId() == R.id.btnDel) {
+            if (!result.getText().toString().equals("")){
+                String value= result.getText().toString();
+                if(value.length()>0)(
+                        value=value.substring(0,value.length()-1);
+                        result.setText(value);
+            }
         }
     }
 }
