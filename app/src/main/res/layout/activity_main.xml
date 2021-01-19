@@ -6,41 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
 
-
-
-        android:id="@+id/calculation"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="95dp"
-
-        android:layout_marginTop="8dp"
-
-        android:autofillHints=" "
-
-        android:cursorVisible="false"
-
-        android:inputType="numberSigned|numberDecimal"
-
-        android:singleLine="true"
-
-        android:textAlignment="textEnd"
-
-        android:textColor="#673AB7"
-
-        android:textSize="56sp"
-
-        android:textStyle="bold"
-
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-
-        app:layout_constraintRight_toRightOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/result"
@@ -56,7 +22,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculation"  />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <Button
         android:id="@+id/btnAC"
